@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProjectCard = ({ title, icon, data }) => {
+const ProjectCard = ({ title, icon, data, onSelectProject, selectedProjectId }) => {
     return (
         <section className="card-section">
             <h2 className="card-title">
@@ -9,7 +9,11 @@ const ProjectCard = ({ title, icon, data }) => {
             <div className="card-items-container">
                 {data.length > 0 ? (
                     data.map((item) => (
-                        <div key={item.id} className="card-item">
+                        <div
+                            key={item.id}
+                            className={`card-item ${selectedProjectId === item.id ? 'card-item-selected' : ''}`}
+                            onClick={() => onSelectProject(item.id)} // Add onClick handler
+                        >
                             <h3 className="card-item-name">{item.name}</h3>
                             <p className="card-item-detail">Total: {item.count}</p>
                             <p className="card-item-date">Creado: {item.dateCreated}</p>
