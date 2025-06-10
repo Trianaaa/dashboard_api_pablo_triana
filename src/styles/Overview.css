@@ -1,0 +1,227 @@
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 1rem; /* p-4 */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .main-content {
+        padding: 2rem; /* md:p-8 */
+    }
+}
+
+/* --- Header Styles --- */
+.header {
+    background-image: linear-gradient(to right, #2563eb, #4f46e5); /* bg-gradient-to-r from-blue-600 to-indigo-700 */
+    color: #ffffff; /* text-white */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    padding: 1rem; /* p-4 */
+    z-index: 10;
+    position: relative;
+}
+
+.header-content {
+    max-width: 1280px; /* container (approx) */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto; /* mx-auto */
+    display: flex;
+    justify-content: space-between; /* justify-between */
+    align-items: center; /* items-center */
+}
+
+.header-title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    letter-spacing: -0.025em; /* tracking-tight */
+    display: flex; /* Para alinear icono y texto */
+    align-items: center;
+}
+
+.header-icon {
+    font-size: 1.5rem; /* Asegura que el ícono tenga un buen tamaño */
+    margin-right: 0.5rem; /* mr-2 */
+}
+
+.header-link {
+    color: #ffffff; /* text-white */
+    text-decoration: none; /* remove underline */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 500; /* font-medium */
+    transition-property: color; /* transition */
+    transition-duration: 300ms; /* duration-300 */
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* ease-in-out */
+}
+
+.header-link:hover {
+    color: #bfdbfe; /* hover:text-blue-200 */
+}
+
+/* --- Overview Page Container --- */
+.overview-container {
+    max-width: 1280px; /* container (approx) */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto; /* mx-auto */
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+    padding-top: 2rem; /* py-8 */
+    padding-bottom: 2rem; /* py-8 */
+}
+
+/* --- Sorting Controls Panel --- */
+.sort-controls-panel {
+    margin-bottom: 2rem; /* mb-8 */
+    padding: 1.5rem; /* p-6 */
+    background-color: #ffffff; /* bg-white */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    display: flex;
+    flex-direction: column; /* flex-col */
+    align-items: center; /* items-center */
+    justify-content: space-between; /* justify-between */
+    gap: 1rem; /* space-y-4 for column layout */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .sort-controls-panel {
+        flex-direction: row; /* sm:flex-row */
+        gap: 0; /* reset gap for row layout */
+        margin-right: 1rem; /* sm:space-x-4, adjust as needed */
+        margin-left: 1rem; /* sm:space-x-4, adjust as needed */
+    }
+}
+
+.sort-controls-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-800 */
+}
+
+.sort-controls-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space-x-4 */
+}
+
+.sort-label {
+    color: #374151; /* text-gray-700 */
+    font-weight: 500; /* font-medium */
+}
+
+.sort-select {
+    padding: 0.5rem; /* p-2 */
+    border-width: 1px; /* border */
+    border-color: #d1d5db; /* border-gray-300 */
+    border-radius: 0.375rem; /* rounded-md */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+    transition-property: border-color, box-shadow; /* transition */
+    transition-duration: 200ms; /* duration-200 */
+}
+
+.sort-select:focus {
+    outline: 2px solid transparent; /* focus:ring-blue-500 equivalent */
+    outline-offset: 2px;
+    border-color: #3b82f6; /* focus:border-blue-500 */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* A simple ring effect */
+}
+
+/* --- Cards Grid Layout --- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* grid-cols-1 */
+    gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+    }
+}
+
+/* For larger screens if needed, although the challenge specified md/lg/xl as 2 columns */
+/* @media (min-width: 1024px) { */ /* lg breakpoint */
+/* .cards-grid { */
+/* grid-template-columns: repeat(2, 1fr); */ /* lg:grid-cols-2 */
+/* } */
+/* } */
+
+/* --- Card Section Base Styles --- */
+.card-section {
+    background-color: #ffffff; /* bg-white */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    padding: 1.5rem; /* p-6 */
+}
+
+.card-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: #1f2937; /* text-gray-800 */
+    margin-bottom: 1.5rem; /* mb-6 */
+    display: flex;
+    align-items: center; /* items-center */
+}
+
+.card-icon {
+    font-size: 1.875rem; /* text-3xl */
+    margin-right: 0.75rem; /* mr-3 */
+}
+
+.card-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* space-y-4 */
+}
+
+.card-item {
+    border-width: 1px; /* border */
+    border-color: #e5e7eb; /* border-gray-200 */
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 1rem; /* p-4 */
+    background-color: #f9fafb; /* bg-gray-50 */
+    transition-property: background-color; /* transition */
+    transition-duration: 300ms; /* duration-300 */
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* ease-in-out */
+}
+
+.card-item:hover {
+    background-color: #f3f4f6; /* hover:bg-gray-100 */
+}
+
+.card-item-name {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    color: #111827; /* text-gray-900 */
+    margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.card-item-detail {
+    font-size: 0.875rem; /* text-sm */
+    color: #4b5563; /* text-gray-600 */
+}
+
+.card-item-date {
+    font-size: 0.75rem; /* text-xs */
+    color: #6b7280; /* text-gray-500 */
+    margin-top: 0.5rem; /* mt-2 */
+}
+
+.card-item-preview-container {
+    margin-top: 0.75rem; /* mt-3 */
+}
+
+.card-item-preview-image {
+    width: 100%; /* w-full */
+    height: 6rem; /* h-24 (96px) */
+    object-fit: cover; /* object-cover */
+    border-radius: 0.375rem; /* rounded-md */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+.card-empty-message {
+    color: #6b7280; /* text-gray-500 */
+}

@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f3f4f6; /* bg-gray-100 */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#root {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-layout-wrapper {
+    display: flex;
+    flex-grow: 1; /* Permite que este contenedor ocupe el espacio restante */
+}
+
+/* --- Main Content Area --- */
+.main-content {
+    flex-grow: 1; /* Permite que el contenido principal ocupe el espacio restante */
+    padding: 1rem; /* p-4 */
+    overflow-y: auto; /* Para permitir scroll si el contenido es largo */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .main-content {
+        padding: 2rem; /* md:p-8 */
+    }
+}
+
+/* --- Header Styles --- */
+.header {
+    background-image: linear-gradient(to right, #2563eb, #4f46e5); /* bg-gradient-to-r from-blue-600 to-indigo-700 */
+    color: #ffffff; /* text-white */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    padding: 1rem; /* p-4 */
+    z-index: 10;
+    position: relative;
+}
+
+.header-content {
+    max-width: 1280px; /* container (approx) */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto; /* mx-auto */
+    display: flex;
+    justify-content: space-between; /* justify-between */
+    align-items: center; /* items-center */
+}
+
+.header-title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    letter-spacing: -0.025em; /* tracking-tight */
+    display: flex; /* Para alinear icono y texto */
+    align-items: center;
+}
+
+.header-icon {
+    font-size: 1.5rem; /* Asegura que el ícono tenga un buen tamaño */
+    margin-right: 0.5rem; /* mr-2 */
+}
+
+.header-link {
+    color: #ffffff; /* text-white */
+    text-decoration: none; /* remove underline */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 500; /* font-medium */
+    transition-property: color; /* transition */
+    transition-duration: 300ms; /* duration-300 */
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* ease-in-out */
+}
+
+.header-link:hover {
+    color: #bfdbfe; /* hover:text-blue-200 */
+}
+
+/* --- Sidebar Styles --- */
+.sidebar {
+    width: 200px; /* Ancho fijo para el sidebar */
+    background-color: #2c3e50; /* Un color oscuro para el sidebar */
+    color: #ecf0f1; /* Color de texto claro */
+    padding: 1rem 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Evita que el sidebar se encoja */
+}
+
+.sidebar-nav {
+    width: 100%;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu-item {
+    margin-bottom: 0.5rem; /* Espacio entre elementos del menú */
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem; /* Padding interno para los enlaces */
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 0.375rem; /* Bordes redondeados */
+    margin: 0 0.5rem; /* Espacio lateral para los bordes redondeados */
+}
+
+.sidebar-link:hover {
+    background-color: #34495e; /* Fondo más oscuro al pasar el ratón */
+    color: #ffffff;
+}
+
+.sidebar-link.active {
+    background-color: #3498db; /* Color de fondo para el elemento activo */
+    font-weight: 700;
+}
+
+.sidebar-icon {
+    font-size: 1.25rem;
+    margin-right: 0.75rem;
+}
+
+/* --- Footer Styles --- */
+.app-footer {
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    text-align: right; /* Alinea el texto a la derecha */
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+.footer-text {
+    /* No se necesitan estilos adicionales para el span, ya se aplica al footer */
+}
