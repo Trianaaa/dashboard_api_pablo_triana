@@ -37,15 +37,20 @@ dashboards_api_pablo_triana/
 
 ## 🚀 Inicialización y Despliegue del Proyecto
 
+### 1. Clonar el repositorio:
+```bash
+git clone [URL_DEL_REPOSITORIO]
+cd dashboards_api_pablo_triana
+```
 Para ejecutar el proyecto en tu entorno local, usa los siguientes tres comandos:
 
-### 1. Instalar dependencias
+### 2. Instalar dependencias
 ```bash
 npm install
 ```
 Este comando instalará todas las dependencias necesarias definidas en package.json.
 
-### 2. Iniciar el servidor de desarrollo
+### 3. Iniciar el servidor de desarrollo
 ```bash
 npm run dev
 ```
