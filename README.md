@@ -3,6 +3,37 @@
 Este proyecto es una aplicación web construida con **React** y **Vite**, que muestra una interfaz de gestión de **proyectos**, **fuentes de datos**, **paneles** y **tableros**. Incluye funcionalidades de ordenamiento, modo oscuro y una vista detallada al seleccionar un proyecto.
 
 ---
+## Estructura del proyecto
+
+```bash
+dashboards_api_pablo_triana/
+├── nginx/                  # Configuración Nginx para Docker
+│   └── default.conf
+├── src/
+│   ├── assets/             # Activos como imágenes o íconos
+│   │   └── react.svg
+│   ├── components/         # Componentes reutilizables de React
+│   │   ├── DashboardCard.jsx
+│   │   ├── DataSourceCard.jsx
+│   │   ├── Header.jsx
+│   │   ├── PanelCard.jsx
+│   │   ├── ProjectCard.jsx
+│   │   └── Sidebar.jsx
+│   ├── context/            # Contextos de React para gestión de estado global
+│   │   └── ThemeContext.jsx
+│   ├── pages/              # Páginas principales de la aplicación
+│   │   └── Overview.jsx
+│   ├── styles/             # Hojas de estilo CSS puro
+│   │   └── Overview.css
+│   ├── App.css
+│   ├── App.jsx             # Componente principal de la aplicación
+│   ├── index.css           # Estilos globales y variables CSS
+│   └── main.jsx            # Punto de entrada de la aplicación (renderizado React)
+├── docker-compose.yml      # Configuración para Docker Compose
+├── Dockerfile              # Instrucciones para construir la imagen Docker
+└── README.md               # Documentación del proyecto
+```
+---
 
 ## 🚀 Inicialización y Despliegue del Proyecto
 
@@ -30,7 +61,7 @@ Abrir la terminal en la carpeta raiz del proyecto y ejecutar el siguiente comand
 ```bash
 docker compose up --build -d
 ```
-Una vez que el comando se complete, la aplicación estará disponible en tu navegador en:
+Una vez que el comando se complete, la aplicación estará disponible en el navegador en:
 ```bash
 http://localhost:8080/
 ```
