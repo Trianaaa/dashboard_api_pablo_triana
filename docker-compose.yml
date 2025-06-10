@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  dashboards-app:
+    # Construye la imagen usando el Dockerfile en el directorio actual
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Mapea el puerto 80 del contenedor al puerto 8080 del host
+    ports:
+      - "8080:80"
+    # Reinicia el contenedor si se detiene, a menos que se detenga manualmente
+    restart: unless-stopped
+    # Nombre del contenedor (opcional)
+    container_name: dashboards_api_pablo_triana_container
