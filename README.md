@@ -3,7 +3,7 @@
 Este proyecto es una aplicación web construida con **React** y **Vite**, que muestra una interfaz de gestión de **proyectos**, **fuentes de datos**, **paneles** y **tableros**. Incluye funcionalidades de ordenamiento, modo oscuro y una vista detallada al seleccionar un proyecto.
 
 ---
-## Estructura del proyecto
+## 🏗️ Estructura del proyecto
 
 ```bash
 dashboards_api_pablo_triana/
