@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard.jsx';
 import DataSourceCard from '../components/DataSourceCard.jsx';
 import PanelCard from '../components/PanelCard.jsx';
 import DashboardCard from '../components/DashboardCard.jsx';
-import '../styles/Overview.css'; // Importa los estilos de esta página
+import '../styles/Overview.css';
 
 const OverviewPage = () => {
     // Sample data for demonstration purposes
@@ -45,6 +46,13 @@ const OverviewPage = () => {
     // Function to handle project selection
     const handleProjectSelect = (projectId) => {
         setSelectedProjectId(projectId);
+        // Scroll to summary section smoothly
+        setTimeout(() => {
+            const summarySection = document.querySelector('.project-summary-section');
+            if (summarySection) {
+                summarySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 100);
     };
 
     // Filtered data based on selected project
@@ -107,45 +115,117 @@ const OverviewPage = () => {
             <div className="project-list-section">
                 <ProjectCard
                     title="Proyectos Disponibles"
-                    icon="&#x1F4C1;" // Folder icon
+                    icon="📁"
                     data={sortedProjects}
-                    onSelectProject={handleProjectSelect} // Pass the selection handler
-                    selectedProjectId={selectedProjectId} // Pass selected project ID
+                    onSelectProject={handleProjectSelect}
+                    selectedProjectId={selectedProjectId}
                 />
             </div>
 
             {/* Project Summary Section - Visible only when a project is selected */}
-            {selectedProject && (
-                <div className="project-summary-section">
-                    <h2 className="summary-title">Resumen del Proyecto: {selectedProject.name}</h2>
-                    <div className="summary-details">
-                        <p><strong>Título del proyecto:</strong> {selectedProject.name}</p>
-                        <p><strong>Descripción:</strong> {selectedProject.description || 'No registrada'}</p>
-                        <p><strong>Fecha de creación:</strong> {selectedProject.dateCreated}</p>
-                        <p><strong>Fecha de última modificación:</strong> {selectedProject.dateModified}</p>
-                        <p><strong>Autor:</strong> {selectedProject.author}</p>
-                        <p><strong>Grupo del Proyecto:</strong> {selectedProject.group}</p>
-                    </div>
+            <AnimatePresence mode="wait">
+                {selectedProject && (
+                    <motion.div
+                        className="project-summary-section"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                    >
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.1 }}
+                        >
+                            <div className="summary-header">
+                                <h2 className="summary-title">{selectedProject.name}</h2>
+                                <button 
+                                    className="summary-close-btn" 
+                                    onClick={() => setSelectedProjectId(null)}
+                                    aria-label="Cerrar resumen"
+                                >
+                                    ×
+                                </button>
+                            </div>
+                        </motion.div>
+                        
+                        <motion.div
+                            className="summary-details-card"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.15, duration: 0.3 }}
+                        >
+                            <div className="summary-details-grid">
+                                <div className="summary-detail-item">
+                                    <span className="summary-detail-label">Descripción</span>
+                                    <span className="summary-detail-value">{selectedProject.description || 'No registrada'}</span>
+                                </div>
+                                <div className="summary-detail-item">
+                                    <span className="summary-detail-label">Fecha de creación</span>
+                                    <span className="summary-detail-value">{selectedProject.dateCreated}</span>
+                                </div>
+                                <div className="summary-detail-item">
+                                    <span className="summary-detail-label">Última modificación</span>
+                                    <span className="summary-detail-value">{selectedProject.dateModified}</span>
+                                </div>
+                                <div className="summary-detail-item">
+                                    <span className="summary-detail-label">Autor</span>
+                                    <span className="summary-detail-value">{selectedProject.author}</span>
+                                </div>
+                                <div className="summary-detail-item">
+                                    <span className="summary-detail-label">Grupo</span>
+                                    <span className="summary-detail-value">{selectedProject.group}</span>
+                                </div>
+                                <div className="summary-detail-item">
+                                    <span className="summary-detail-label">Total items</span>
+                                    <span className="summary-detail-value">{selectedProject.count}</span>
+                                </div>
+                            </div>
+                        </motion.div>
 
-                    <div className="cards-grid project-summary-grid">
-                        <DataSourceCard
-                            title="Fuentes de datos"
-                            icon="&#x1F5C4;" // File Cabinet icon
-                            data={sortedFilteredDataSources}
-                        />
-                        <PanelCard
-                            title="Paneles creados"
-                            icon="&#x1F4C8;" // Chart Increasing icon
-                            data={sortedFilteredPanels}
-                        />
-                        <DashboardCard
-                            title="Tableros creados"
-                            icon="&#x1F4CA;" // Bar Chart icon
-                            data={sortedFilteredDashboards}
-                        />
-                    </div>
-                </div>
-            )}
+                        <motion.div
+                            className="cards-grid project-summary-grid"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.25 }}
+                            >
+                                <DataSourceCard
+                                    title="Fuentes de datos"
+                                    icon="📊"
+                                    data={sortedFilteredDataSources}
+                                />
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
+                            >
+                                <PanelCard
+                                    title="Paneles creados"
+                                    icon="📈"
+                                    data={sortedFilteredPanels}
+                                />
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.35 }}
+                            >
+                                <DashboardCard
+                                    title="Tableros creados"
+                                    icon="📉"
+                                    data={sortedFilteredDashboards}
+                                />
+                            </motion.div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };

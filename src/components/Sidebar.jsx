@@ -1,51 +1,95 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { 
+    IconHome, 
+    IconFolder, 
+    IconDatabase, 
+    IconChartLine, 
+    IconDashboard, 
+    IconSettings, 
+    IconMessageCircle 
+} from '@tabler/icons-react';
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, onClose }) => {
+    const handleLinkClick = () => {
+        if (window.innerWidth < 768) {
+            onClose();
+        }
+    };
+
     return (
-        <aside className="sidebar">
+        <aside className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
             <nav className="sidebar-nav">
                 <ul className="sidebar-menu">
                     <li className="sidebar-menu-item">
-                        <a href="#" className="sidebar-link active">
-                            <span className="sidebar-icon">&#x2302;</span> {/* House */}
-                            Inicio
-                        </a>
+                        <NavLink 
+                            to="/" 
+                            className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+                            onClick={handleLinkClick}
+                        >
+                            <IconHome className="sidebar-icon" size={20} stroke={1.5} />
+                            <span>Inicio</span>
+                        </NavLink>
                     </li>
                     <li className="sidebar-menu-item">
-                        <a href="/overview" className="sidebar-link">
-                            <span className="sidebar-icon">&#x1F4C1;</span> {/* Folder */}
-                            Proyectos
-                        </a>
+                        <NavLink 
+                            to="/overview" 
+                            className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+                            onClick={handleLinkClick}
+                        >
+                            <IconFolder className="sidebar-icon" size={20} stroke={1.5} />
+                            <span>Proyectos</span>
+                        </NavLink>
                     </li>
                     <li className="sidebar-menu-item">
-                        <a href="#" className="sidebar-link">
-                            <span className="sidebar-icon">&#x1F5C4;</span> {/* File Cabinet */}
-                            Fuentes de datos
-                        </a>
+                        <NavLink 
+                            to="/data-sources" 
+                            className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+                            onClick={handleLinkClick}
+                        >
+                            <IconDatabase className="sidebar-icon" size={20} stroke={1.5} />
+                            <span>Fuentes de datos</span>
+                        </NavLink>
                     </li>
                     <li className="sidebar-menu-item">
-                        <a href="#" className="sidebar-link">
-                            <span className="sidebar-icon">&#x1F4C8;</span> {/* Chart Increasing */}
-                            Paneles
-                        </a>
+                        <NavLink 
+                            to="/panels" 
+                            className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+                            onClick={handleLinkClick}
+                        >
+                            <IconChartLine className="sidebar-icon" size={20} stroke={1.5} />
+                            <span>Paneles</span>
+                        </NavLink>
                     </li>
                     <li className="sidebar-menu-item">
-                        <a href="#" className="sidebar-link">
-                            <span className="sidebar-icon">&#x1F4CA;</span> {/* Bar Chart */}
-                            Tableros
-                        </a>
+                        <NavLink 
+                            to="/dashboards" 
+                            className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+                            onClick={handleLinkClick}
+                        >
+                            <IconDashboard className="sidebar-icon" size={20} stroke={1.5} />
+                            <span>Tableros</span>
+                        </NavLink>
                     </li>
                     <li className="sidebar-menu-item">
-                        <a href="#" className="sidebar-link">
-                            <span className="sidebar-icon">&#x2699;</span> {/* Gear */}
-                            Administración
-                        </a>
+                        <NavLink 
+                            to="/admin" 
+                            className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+                            onClick={handleLinkClick}
+                        >
+                            <IconSettings className="sidebar-icon" size={20} stroke={1.5} />
+                            <span>Administración</span>
+                        </NavLink>
                     </li>
                     <li className="sidebar-menu-item">
-                        <a href="#" className="sidebar-link">
-                            <span className="sidebar-icon">&#x1F4AC;</span> {/* Speech Balloon */}
-                            Asistente
-                        </a>
+                        <NavLink 
+                            to="/assistant" 
+                            className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+                            onClick={handleLinkClick}
+                        >
+                            <IconMessageCircle className="sidebar-icon" size={20} stroke={1.5} />
+                            <span>Asistente</span>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

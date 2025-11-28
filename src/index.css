@@ -1,130 +1,203 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Variables CSS para el tema claro */
+/* Variables CSS para el tema claro - Diseño Minimalista */
 :root {
-    --bg-primary: #f3f4f6; /* Fondo principal de la aplicación */
+    --bg-primary: #fafafa; /* Fondo principal más limpio */
     --bg-secondary: #ffffff; /* Fondo de paneles y tarjetas */
-    --text-primary: #1f2937; /* Color de texto principal (títulos, etc.) */
-    --text-secondary: #4b5563; /* Color de texto secundario (detalles) */
-    --border-color: #e5e7eb; /* Color de bordes */
-    --shadow-color: rgba(0, 0, 0, 0.1); /* Color de sombra */
-    --header-bg-from: #2563eb; /* Gradiente de encabezado */
-    --header-bg-to: #4f46e5;
-    --header-text: #ffffff;
-    --sidebar-bg: #2c3e50; /* Fondo del sidebar */
-    --sidebar-text: #ecf0f1;
-    --sidebar-hover-bg: #34495e;
-    --sidebar-active-bg: #3498db;
-    --card-item-bg: #f9fafb; /* Fondo de elementos de tarjeta */
-    --card-item-hover-bg: #e0e7ff;
-    --card-item-selected-bg: #c7d2fe;
-    --card-item-selected-border: #4f46e5;
-    --card-item-border: #e5e7eb;
-    --card-item-text-name: #111827;
-    --card-item-text-detail: #4b5563;
-    --card-item-text-date: #6b7280;
-    --sort-select-border: #d1d5db;
-    --sort-select-focus-border: #3b82f6;
-    --sort-select-focus-shadow: rgba(59, 130, 246, 0.5);
-    --button-bg: #3b82f6;
+    --text-primary: #0a0a0a; /* Texto principal más oscuro */
+    --text-secondary: #6b7280; /* Color de texto secundario */
+    --text-tertiary: #9ca3af; /* Texto terciario */
+    --border-color: #e5e7eb; /* Color de bordes sutiles */
+    --shadow-color: rgba(0, 0, 0, 0.04); /* Sombras muy sutiles */
+    --shadow-hover: rgba(0, 0, 0, 0.08);
+    --header-bg: #ffffff; /* Header blanco minimalista */
+    --header-border: #e5e7eb;
+    --header-text: #0a0a0a;
+    --sidebar-bg: #ffffff; /* Sidebar blanco */
+    --sidebar-text: #6b7280;
+    --sidebar-hover-bg: #f9fafb;
+    --sidebar-active-bg: #f3f4f6;
+    --sidebar-active-text: #0a0a0a;
+    --card-item-bg: #ffffff; /* Fondo de elementos */
+    --card-item-hover-bg: #f9fafb;
+    --card-item-selected-bg: #f3f4f6;
+    --card-item-selected-border: #d1d5db;
+    --card-item-border: #f3f4f6;
+    --card-item-text-name: #0a0a0a;
+    --card-item-text-detail: #6b7280;
+    --card-item-text-date: #9ca3af;
+    --sort-select-border: #e5e7eb;
+    --sort-select-focus-border: #0a0a0a;
+    --sort-select-focus-shadow: rgba(0, 0, 0, 0.05);
+    --button-bg: #0a0a0a;
     --button-text: #ffffff;
-    --button-hover-bg: #2563eb;
+    --button-hover-bg: #1f1f1f;
+    --accent-color: #0a0a0a;
     --footer-bg: #ffffff;
-    --footer-text: #6b7280;
+    --footer-text: #9ca3af;
+    --footer-border: #f3f4f6;
 }
 
 /* Variables CSS para el tema oscuro */
 html.dark-mode {
-    --bg-primary: #1a202c; /* Fondo principal de la aplicación oscuro */
-    --bg-secondary: #2d3748; /* Fondo de paneles y tarjetas oscuro */
-    --text-primary: #e2e8f0; /* Color de texto principal oscuro */
-    --text-secondary: #a0aec0; /* Color de texto secundario oscuro */
-    --border-color: #4a5568; /* Color de bordes oscuro */
-    --shadow-color: rgba(0, 0, 0, 0.4); /* Color de sombra oscuro */
-    --header-bg-from: #1a202c; /* Gradiente de encabezado oscuro */
-    --header-bg-to: #2d3748;
-    --header-text: #e2e8f0;
-    --sidebar-bg: #1a202c; /* Fondo del sidebar oscuro */
-    --sidebar-text: #a0aec0;
-    --sidebar-hover-bg: #2d3748;
-    --sidebar-active-bg: #4f46e5; /* Un tono púrpura o azul más oscuro para activo */
-    --card-item-bg: #2d3748; /* Fondo de elementos de tarjeta oscuro */
-    --card-item-hover-bg: #4a5568;
-    --card-item-selected-bg: #4f46e5;
-    --card-item-selected-border: #805ad5;
-    --card-item-border: #4a5568;
-    --card-item-text-name: #e2e8f0;
-    --card-item-text-detail: #a0aec0;
-    --card-item-text-date: #718096;
-    --sort-select-border: #4a5568;
-    --sort-select-focus-border: #667eea;
-    --sort-select-focus-shadow: rgba(102, 126, 234, 0.5);
-    --button-bg: #667eea;
-    --button-text: #ffffff;
-    --button-hover-bg: #4f46e5;
-    --footer-bg: #2d3748;
-    --footer-text: #a0aec0;
+    --bg-primary: #0a0a0a; /* Fondo principal oscuro profundo */
+    --bg-secondary: #111111; /* Fondo de paneles */
+    --text-primary: #fafafa; /* Texto principal claro */
+    --text-secondary: #a1a1aa; /* Color de texto secundario */
+    --text-tertiary: #71717a; /* Texto terciario */
+    --border-color: #27272a; /* Color de bordes sutiles */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* Sombras sutiles */
+    --shadow-hover: rgba(0, 0, 0, 0.5);
+    --header-bg: #111111; /* Header oscuro */
+    --header-border: #27272a;
+    --header-text: #fafafa;
+    --sidebar-bg: #111111; /* Sidebar oscuro */
+    --sidebar-text: #a1a1aa;
+    --sidebar-hover-bg: #1a1a1a;
+    --sidebar-active-bg: #27272a;
+    --sidebar-active-text: #fafafa;
+    --card-item-bg: #111111; /* Fondo de elementos */
+    --card-item-hover-bg: #1a1a1a;
+    --card-item-selected-bg: #27272a;
+    --card-item-selected-border: #3f3f46;
+    --card-item-border: #27272a;
+    --card-item-text-name: #fafafa;
+    --card-item-text-detail: #a1a1aa;
+    --card-item-text-date: #71717a;
+    --sort-select-border: #27272a;
+    --sort-select-focus-border: #fafafa;
+    --sort-select-focus-shadow: rgba(255, 255, 255, 0.1);
+    --button-bg: #fafafa;
+    --button-text: #0a0a0a;
+    --button-hover-bg: #e4e4e7;
+    --accent-color: #fafafa;
+    --footer-bg: #111111;
+    --footer-text: #71717a;
+    --footer-border: #27272a;
 }
 
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
 
 body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--bg-primary); /* Usa la variable */
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 #root {
-    flex-grow: 1;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .app-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-primary); /* Usa la variable */
-    color: var(--text-primary); /* Usa la variable */
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    flex: 1;
 }
 
 .main-layout-wrapper {
     display: flex;
-    flex-grow: 1;
+    flex: 1;
+    min-height: 0;
+    position: relative;
 }
 
 /* --- Main Content Area --- */
 .main-content {
-    flex-grow: 1;
-    padding: 1rem; /* p-4 */
+    flex: 1;
+    padding: 1.5rem 1rem;
     overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
-@media (min-width: 768px) { /* md breakpoint */
+.page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.page-container h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.page-container p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (min-width: 640px) {
     .main-content {
-        padding: 2rem; /* md:p-8 */
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-content {
+        padding: 4rem 3rem;
     }
 }
 
 /* --- Header Styles --- */
 .header {
-    background-image: linear-gradient(to right, var(--header-bg-from), var(--header-bg-to));
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--header-border);
     color: var(--header-text);
-    box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    padding: 1rem;
+    padding: 1rem 1.25rem;
     z-index: 10;
-    position: relative;
-    display: flex; /* Añadido para centrar el contenido */
-    justify-content: center; /* Añadido para centrar el contenido */
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+html.dark-mode .header {
+    background-color: rgba(17, 17, 17, 0.8);
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding: 1.25rem 1.5rem;
+    }
 }
 
 .header-content {
-    max-width: 1280px;
-    width: 100%; /* Asegura que el contenido ocupe el ancho máximo disponible */
+    max-width: 1400px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -132,72 +205,249 @@ body {
     align-items: center;
 }
 
-.header-title {
-    font-size: 1.875rem;
-    font-weight: 700;
-    letter-spacing: -0.025em;
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobile-menu-button {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    color: var(--header-text);
+    transition: opacity 0.2s ease;
+    line-height: 1;
+}
+
+.mobile-menu-button:hover {
+    opacity: 0.7;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-button {
+        display: none;
+    }
+}
+
+.header-title-link {
+    text-decoration: none;
+    color: inherit;
     display: flex;
     align-items: center;
 }
 
+.header-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    color: var(--header-text);
+    transition: opacity 0.2s ease;
+}
+
+.header-title-link:hover .header-title {
+    opacity: 0.8;
+}
+
+@media (min-width: 640px) {
+    .header-title {
+        font-size: 1.25rem;
+    }
+}
+
 .header-icon {
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
+    margin-right: 0.75rem;
+    opacity: 0.9;
+    flex-shrink: 0;
 }
 
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Espacio entre los elementos de navegación */
+    gap: 1.5rem;
 }
 
 .header-link {
-    color: var(--header-text);
+    color: var(--text-secondary);
     text-decoration: none;
-    font-size: 1.125rem;
+    font-size: 0.9375rem;
     font-weight: 500;
-    transition-property: color;
-    transition-duration: 300ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 0.2s ease;
+    letter-spacing: -0.01em;
 }
 
 .header-link:hover {
-    color: var(--text-primary); /* Cambiado a una variable del tema oscuro/claro */
+    color: var(--text-primary);
 }
 
-/* --- Theme Toggle Button --- */
-.theme-toggle-button {
-    background-color: var(--button-bg);
-    color: var(--button-text);
+/* --- Theme Switch --- */
+.theme-switch {
+    background: none;
     border: none;
-    border-radius: 9999px; /* Fully rounded */
-    padding: 0.5rem 0.75rem;
-    font-size: 1.25rem; /* Large icon */
+    padding: 0;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    outline: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.theme-switch:focus-visible .theme-switch-track {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.theme-switch-track {
+    position: relative;
+    width: 56px;
+    height: 30px;
+    background-color: #d1d5db;
+    border: 1.5px solid #9ca3af;
+    border-radius: 15px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+html.dark-mode .theme-switch-track {
+    background-color: #4b5563;
+    border-color: #6b7280;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.theme-switch:hover .theme-switch-track {
+    border-color: #6b7280;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+html.dark-mode .theme-switch:hover .theme-switch-track {
+    border-color: #9ca3af;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.theme-switch-thumb {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 4px var(--shadow-color);
+    left: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
+    z-index: 1;
 }
 
-.theme-toggle-button:hover {
-    background-color: var(--button-hover-bg);
+.theme-switch-thumb svg {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2;
+    color: #f59e0b;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
 }
 
-.theme-toggle-button span {
-    display: block; /* Ensure the icon is centered */
+.theme-switch-dark .theme-switch-thumb {
+    left: calc(100% - 27px);
+    background-color: #1f2937;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.theme-switch-dark .theme-switch-thumb svg {
+    color: #fbbf24;
+}
+
+.theme-switch:active .theme-switch-thumb {
+    transform: scale(0.92);
+}
+
+/* Smooth icon animation */
+.theme-switch-thumb svg {
+    animation: iconFadeIn 0.3s ease;
+}
+
+@keyframes iconFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) rotate(-20deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
 }
 
 
 /* --- Sidebar Styles --- */
 .sidebar {
-    width: 200px;
-    background-color: var(--sidebar-bg); /* Usa la variable */
-    color: var(--sidebar-text); /* Usa la variable */
-    padding: 1rem 0;
-    box-shadow: 2px 0 5px var(--shadow-color);
+    width: 100%;
+    max-width: 280px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 1.5rem 0;
+    border-right: 1px solid var(--border-color);
     flex-shrink: 0;
+    position: fixed;
+    left: -280px;
+    top: 57px;
+    bottom: 0;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px var(--shadow-color);
+}
+
+.sidebar-open {
+    left: 0;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        top: 0;
+        box-shadow: none;
+    }
+}
+
+.sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        position: static;
+        left: auto;
+        max-width: 240px;
+        padding: 2rem 0;
+        transition: none;
+    }
+
+    .sidebar-overlay {
+        display: none;
+    }
 }
 
 .sidebar-nav {
@@ -211,48 +461,83 @@ body {
 }
 
 .sidebar-menu-item {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .sidebar-link {
     display: flex;
     align-items: center;
-    padding: 0.75rem 1rem;
-    color: var(--sidebar-text); /* Usa la variable */
+    padding: 0.625rem 1rem;
+    color: var(--sidebar-text);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 500;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    border-radius: 0.375rem;
-    margin: 0 0.5rem;
+    transition: all 0.2s ease;
+    border-radius: 0;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+    .sidebar-link {
+        padding: 0.625rem 1.5rem;
+        font-size: 0.9375rem;
+    }
 }
 
 .sidebar-link:hover {
-    background-color: var(--sidebar-hover-bg); /* Usa la variable */
-    color: var(--header-text); /* Usa la variable */
+    background-color: var(--sidebar-hover-bg);
+    color: var(--sidebar-active-text);
 }
 
 .sidebar-link.active {
-    background-color: var(--sidebar-active-bg); /* Usa la variable */
-    font-weight: 700;
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-active-text);
+    font-weight: 600;
+    border-left: 2px solid var(--accent-color);
+    padding-left: calc(1.5rem - 2px);
 }
 
 .sidebar-icon {
-    font-size: 1.25rem;
     margin-right: 0.75rem;
+    opacity: 0.7;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: opacity 0.2s ease;
+}
+
+.sidebar-link.active .sidebar-icon {
+    opacity: 1;
+}
+
+.sidebar-link span {
+    flex: 1;
 }
 
 /* --- Footer Styles --- */
 .app-footer {
-    padding: 0.5rem 1rem;
-    background-color: var(--footer-bg); /* Usa la variable */
-    border-top: 1px solid var(--border-color); /* Usa la variable */
-    text-align: right;
-    font-size: 0.875rem;
-    color: var(--footer-text); /* Usa la variable */
+    padding: 1rem 1.25rem;
+    background-color: var(--footer-bg);
+    border-top: 1px solid var(--footer-border);
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--footer-text);
     margin-top: auto;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+    .app-footer {
+        text-align: right;
+        padding: 1.5rem 2rem;
+    }
 }
 
 .footer-text {
-    /* No se necesitan estilos adicionales para el span, ya se aplica al footer */
+    margin: 0;
 }
